@@ -1,11 +1,771 @@
 <!DOCTYPE html>
 <html>
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <title>Meu Primeiro Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clube Basket Phoenix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff6f00;
+      --secondary: #0d0d0d;
+      --light: #ffffff;
+      --muted: rgba(255, 255, 255, 0.8);
+      --bg-gradient: linear-gradient(135deg, rgba(255, 111, 0, 0.9), rgba(13, 13, 13, 0.95));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: var(--secondary);
+      color: var(--light);
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 4vw;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .top-bar span strong {
+      color: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4vw;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      object-fit: cover;
+      background: var(--light);
+      padding: 4px;
+    }
+
+    .logo h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .menu a {
+      position: relative;
+      color: var(--light);
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--secondary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(255, 111, 0, 0.35);
+    }
+
+    .hero {
+      min-height: 80vh;
+      background: var(--bg-gradient), url('https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--light);
+      padding: 4rem 4vw 6rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--muted);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      background: rgba(13, 13, 13, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      min-width: 160px;
+    }
+
+    .stat-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .stat-card span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 4rem 4vw;
+      background: var(--light);
+    }
+
+    section:nth-of-type(even) {
+      background: #f2f2f2;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--secondary);
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .about-grid img {
+      width: 100%;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(13, 13, 13, 0.25);
+    }
+
+    .about-text h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+      background: rgba(255, 111, 0, 0.1);
+      padding: 0.75rem 1rem;
+      border-left: 4px solid var(--primary);
+      border-radius: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .teams {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-card {
+      background: var(--secondary);
+      color: var(--light);
+      border-radius: 1.2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+      box-shadow: 0 20px 35px rgba(13, 13, 13, 0.35);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .team-card .content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex: 1;
+    }
+
+    .team-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .team-card p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      flex: 1;
+    }
+
+    .team-card a {
+      align-self: flex-start;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .schedule {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .schedule-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(13, 13, 13, 0.08);
+      box-shadow: 0 15px 25px rgba(13, 13, 13, 0.12);
+    }
+
+    .schedule-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .schedule-card strong {
+      color: var(--primary);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .news-card {
+      background: var(--secondary);
+      color: var(--light);
+      border-radius: 1.2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 35px rgba(13, 13, 13, 0.35);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .news-card .content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex: 1;
+    }
+
+    .news-card a {
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .membership {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .membership-card {
+      background: var(--secondary);
+      color: var(--light);
+      padding: 2.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(13, 13, 13, 0.35);
+    }
+
+    .membership-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .membership-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .membership-card li::before {
+      content: '\2713';
+      color: var(--primary);
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+
+    .cta-box {
+      background: rgba(255, 111, 0, 0.12);
+      border: 1px solid rgba(255, 111, 0, 0.3);
+      padding: 2rem;
+      border-radius: 1.5rem;
+    }
+
+    .cta-box h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+      color: #333;
+    }
+
+    .partners {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .partner {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(13, 13, 13, 0.1);
+      box-shadow: 0 15px 20px rgba(13, 13, 13, 0.12);
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    footer {
+      background: var(--secondary);
+      color: var(--muted);
+      padding: 3rem 4vw;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-grid h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .footer-grid ul {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: grid;
+      place-items: center;
+      color: var(--light);
+      transition: background 0.3s ease;
+    }
+
+    .social a:hover {
+      background: var(--primary);
+      color: var(--secondary);
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 3rem 8vw 5rem;
+      }
+
+      .hero-content h2 {
+        font-size: 2.4rem;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+
+      section {
+        padding: 3rem 8vw;
+      }
+    }
+  </style>
 </head>
 <body>
   <h1>Olá Mundo! 🚀</h1>
   <p>Este é o meu primeiro site publicado com GitHub Pages.</p>
+  <header>
+    <div class="top-bar">
+      <span><strong>Phoenix Arena</strong> · 20 Anos de História</span>
+      <span>info@basketphoenix.pt · +351 987 654 321</span>
+    </div>
+    <nav>
+      <div class="logo">
+        <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=200&q=80" alt="Logo Clube Basket Phoenix">
+        <h1>Clube Basket Phoenix</h1>
+      </div>
+      <div class="menu">
+        <a href="#clube">Clube</a>
+        <a href="#equipas">Equipas</a>
+        <a href="#calendario">Calendário</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#socio">Sócios</a>
+        <a href="#contactos">Contactos</a>
+      </div>
+      <a class="btn-primary" href="#socio">Junta-te à Família</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="tagline">Paixão. Energia. Vitória.</span>
+        <h2>Um clube que joga com o coração de uma fénix.</h2>
+        <p>Inspirados pela nossa cidade e pelo espírito combativo dos nossos adeptos, o Clube Basket Phoenix vive cada jogo com intensidade máxima. Junta-te à nossa família e vive a experiência do basquetebol como nunca.</p>
+        <a class="btn-primary" href="#calendario">Próximo Jogo</a>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <h3>20</h3>
+            <span>Anos de História</span>
+          </div>
+          <div class="stat-card">
+            <h3>12</h3>
+            <span>Títulos Nacionais</span>
+          </div>
+          <div class="stat-card">
+            <h3>8K</h3>
+            <span>Adeptos em cada jogo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clube">
+      <h2 class="section-title">O Clube</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="tagline">Sobre nós</span>
+          <h3>A nossa chama nunca se apaga</h3>
+          <p>Desde 2004, o Clube Basket Phoenix representa a garra e resiliência da cidade. Com equipas em todos os escalões, estamos comprometidos com a formação de atletas completos e cidadãos exemplares.</p>
+          <p>O Phoenix Arena é uma das salas mais vibrantes do basquetebol nacional. Aqui cada jogo transforma-se num espetáculo onde a música, a energia e as cores laranja, preto e branco tomam conta das bancadas.</p>
+          <div class="highlight">
+            <strong>Missão:</strong> Formar atletas de excelência, promover valores de equipa e contribuir para o desenvolvimento da comunidade através do basquetebol.
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?auto=format&fit=crop&w=1200&q=80" alt="Adeptos vibrando no Phoenix Arena">
+      </div>
+    </section>
+
+    <section id="equipas">
+      <h2 class="section-title">Equipas</h2>
+      <div class="teams">
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80" alt="Equipa sénior masculina">
+          <div class="content">
+            <h3>Séniores Masculinos</h3>
+            <p>Campeões nacionais em 2023 e presença regular nas competições europeias. Liderados pelo treinador Miguel Duarte.</p>
+            <a href="#">Ver Plantel &rarr;</a>
+          </div>
+        </article>
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80" alt="Equipa sénior feminina">
+          <div class="content">
+            <h3>Séniores Femininos</h3>
+            <p>Uma equipa que combina talento e intensidade. Campeãs da Taça de Portugal e referência no basquetebol feminino.</p>
+            <a href="#">Ver Plantel &rarr;</a>
+          </div>
+        </article>
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" alt="Formação Sub-18">
+          <div class="content">
+            <h3>Academia Phoenix</h3>
+            <p>Programas de formação desde os Sub-8 aos Sub-18. Treinos focados na evolução técnica, mental e física.</p>
+            <a href="#">Inscreve-te &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="calendario">
+      <h2 class="section-title">Calendário</h2>
+      <div class="schedule">
+        <div class="schedule-card">
+          <h4>20 Abril · Phoenix Arena</h4>
+          <p><strong>Phoenix</strong> vs. Thunder Lisboa</p>
+          <p>Liga Betclic · 20h00</p>
+        </div>
+        <div class="schedule-card">
+          <h4>27 Abril · Porto</h4>
+          <p><strong>Phoenix</strong> vs. Dragões Norte</p>
+          <p>Meia-final Taça · 18h30</p>
+        </div>
+        <div class="schedule-card">
+          <h4>4 Maio · Phoenix Arena</h4>
+          <p><strong>Phoenix</strong> vs. Atlântico Sharks</p>
+          <p>Liga Betclic · 21h00</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="noticias">
+      <h2 class="section-title">Notícias</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1519861155730-0b5b0eac4a05?auto=format&fit=crop&w=1200&q=80" alt="Apresentação de novo reforço">
+          <div class="content">
+            <h3>Reforço de Elite para a Época 24/25</h3>
+            <p>O base internacional Marco Silva reforça o plantel sénior com experiência EuroLeague e visão de jogo apurada.</p>
+            <a href="#">Ler mais</a>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80" alt="Clínica de formação">
+          <div class="content">
+            <h3>Clinics de Primavera para Jovens Talentos</h3>
+            <p>A Academia Phoenix lança sessões intensivas para atletas Sub-12 a Sub-16 com treinadores convidados internacionais.</p>
+            <a href="#">Ler mais</a>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80" alt="Adepto no pavilhão">
+          <div class="content">
+            <h3>Campanha Sócio Fénix 2024</h3>
+            <p>Vantagens exclusivas, bilhetes prioritários e experiências únicas para quem vibra connosco em todas as jornadas.</p>
+            <a href="#">Ler mais</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="socio">
+      <h2 class="section-title">Ser Sócio</h2>
+      <div class="membership">
+        <div class="membership-card">
+          <h3>Torna-te Sócio Fénix</h3>
+          <p>Escolhe o plano ideal e acompanha de perto cada vitória. Beneficia de vantagens exclusivas pensadas para ti.</p>
+          <ul>
+            <li>Bilhetes antecipados com lugar garantido</li>
+            <li>Descontos em merchandising oficial</li>
+            <li>Acesso a eventos exclusivos e sessões de autógrafos</li>
+            <li>Newsletter com conteúdo premium</li>
+          </ul>
+          <a class="btn-primary" href="#">Faz-te Sócio</a>
+        </div>
+        <div class="cta-box">
+          <h4>Experiência Phoenix VIP</h4>
+          <p>Descobre os camarotes corporativos, ativações de marca personalizadas e oportunidades para empresas viverem o basquetebol com estilo.</p>
+          <a class="btn-primary" href="#contactos">Fala connosco</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Parceiros Oficiais</h2>
+      <div class="partners">
+        <div class="partner">FireTech</div>
+        <div class="partner">Phoenix Bank</div>
+        <div class="partner">OrangeFit</div>
+        <div class="partner">SkyLine Hotels</div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contactos">
+    <div class="footer-grid">
+      <div>
+        <h4>Clube Basket Phoenix</h4>
+        <p>Rua da Fénix, 45 · 4000-123 Porto</p>
+        <p>info@basketphoenix.pt · +351 987 654 321</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">I</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Twitter">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Modalidades</h4>
+        <ul>
+          <li>Basquetebol Sénior</li>
+          <li>Formação</li>
+          <li>3x3 Street</li>
+          <li>Escola de Verão</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Clube</h4>
+        <ul>
+          <li>História</li>
+          <li>Palmarés</li>
+          <li>Missão e Valores</li>
+          <li>Direção</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <ul>
+          <li>Loja Oficial</li>
+          <li>Bilheteira</li>
+          <li>Contacto Empresas</li>
+          <li>Perguntas Frequentes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Clube Basket Phoenix. Todos os direitos reservados.</span>
+      <span>Desenvolvido com inspiração na paixão laranja do basquetebol.</span>
+    </div>
+  </footer>
 </body>
 </html>
