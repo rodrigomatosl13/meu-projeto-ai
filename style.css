@@ -218,6 +218,336 @@
       background: #f2f2f2;
     }
 
+.team-hero {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
+              url('assets/senioresnew.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--light);
+  min-height: 75vh;
+  padding: 8rem 4vw;
+  text-align: center;
+}
+
+.team-hero .hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+  top: 250px;
+}
+
+.sub23-hero {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
+              url('assets/SUB23ABA.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 83vh;
+  padding: 8rem 4vw;
+}
+
+.section-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 4vw 0;
+  background: var(--light);
+  flex-wrap: wrap;
+}
+
+.section-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.5rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.section-link:hover,
+.section-link:focus {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.team-section {
+  padding-top: 2.5rem;
+}
+
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.roster-card {
+  background: var(--secondary);
+  color: var(--light);
+  padding: 1.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 16px 30px rgba(13, 13, 13, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.roster-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.roster-card span {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.roster-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.results-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.result-card {
+  background: var(--light);
+  border-left: 4px solid var(--primary);
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(13, 13, 13, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.result-date {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+
+.result-card strong {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.result-remark {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.results-table {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(13, 13, 13, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.results-header,
+.results-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 2.5fr;
+  gap: 1.5rem;
+  padding: 1.25rem 2rem;
+}
+
+.results-header {
+  background: var(--secondary);
+  color: var(--light);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.results-row {
+  background: var(--light);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.results-row:nth-of-type(even) {
+  background: #f9f9f9;
+}
+
+.results-row span:first-child {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.results-row span:nth-child(3) {
+  display: inline-flex;
+  align-items: center;
+}
+
+    .results-row span:nth-child(4),
+    .results-row span:nth-child(5) {
+      color: #444;
+    }
+
+.matchup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  color: #222;
+}
+
+.team {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.team img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 8px 14px rgba(13, 13, 13, 0.18);
+}
+
+.vs-separator {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.score {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.score-home,
+.score-away {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.score-separator {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.results-row.aba-home .score-home,
+.results-row.aba-away .score-away {
+  color: var(--primary);
+  font-weight: 800;
+}
+.matchup .team span:last-child {
+  color: #222;
+}
+
+.team-section .schedule {
+  margin-top: 1.5rem;
+}
+
+.schedule-table {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(13, 13, 13, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.schedule-header,
+.schedule-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1.5fr;
+  gap: 1.5rem;
+  padding: 1.25rem 2rem;
+}
+
+.schedule-header {
+  background: var(--secondary);
+  color: var(--light);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.schedule-row {
+  background: var(--light);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.schedule-row:nth-of-type(even) {
+  background: #f9f9f9;
+}
+
+.schedule-row span:first-child {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.schedule-row span:nth-child(2) {
+  font-weight: 600;
+}
+
+.schedule-row span:nth-child(3),
+.schedule-row span:nth-child(4) {
+  color: #444;
+}
+
+@media (max-width: 900px) {
+  .schedule-header,
+  .schedule-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .schedule-header {
+    text-align: left;
+  }
+
+  .schedule-row {
+    font-size: 1rem;
+  }
+
+	.results-header,
+	.results-row {
+		grid-template-columns: 1fr;
+		gap: 0.75rem;
+		padding: 1rem 1.25rem;
+	}
+
+	.team img {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+@media (max-width: 600px) {
+	.team img {
+		display: none;
+	}
+}
+
     .section-title {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.2rem;
@@ -294,6 +624,12 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
+    }
+
+    .teams-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
     }
 
     .team-card {
@@ -599,4 +935,8 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.highlighted-team {
+  color: var(--primary) !important;
+  font-weight: 700;
 }
