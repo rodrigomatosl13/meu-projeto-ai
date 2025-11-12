@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junta-te à Família · Associação Basquetebol Albicastrense</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <span><strong>Castelo Branco</strong> · Basquetebol com identidade albicastrense</span>
+      <span>abacbranco@gmail.com · +351 967 066 170</span>
+    </div>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/Logo_ABA.jpg" alt="Logótipo da Associação Basquetebol Albicastrense">
+        </a>
+        <h1>Associação Basquetebol Albicastrense</h1>
+      </div>
+      <div class="menu">
+        <a href="index.html">INÍCIO</a>
+        <a href="clube.html">CLUBE</a>
+        <div class="dropdown">
+          <a href="#">EQUIPAS</a>
+          <div class="dropdown-content">
+            <a href="seniores.html">Séniores Masculinos</a>
+            <a href="sub23.html">SUB - 23</a>
+            <a href="formacao.html">Equipas de Formação</a>
+          </div>
+        </div>
+        <a href="calendario.html">Calendário</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#socio">Sócios</a>
+        <a href="#contactos">Contactos</a>
+      </div>
+      <a class="btn-primary" href="juntateanos.html">Junta-te à Família</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="join-hero">
+      <div class="hero-content">
+        <span class="tagline">Ser ABA</span>
+        <h2>Faz parte da família albicastrense</h2>
+        <p>Quer sejas atleta, sócio ou patrocinador, há um lugar para ti na paixão que une Castelo Branco ao basquetebol.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#adesao">Quero aderir</a>
+          <a class="btn-secondary" href="#beneficios">Ver vantagens</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="join-section">
+      <h3 class="section-title">Vantagens exclusivas</h3>
+      <div class="join-grid">
+        <article class="join-card">
+          <h4>Sócios ABA</h4>
+          <ul>
+            <li>Bilhetes com lugar reservado e prioridade em jogos decisivos</li>
+            <li>Descontos no merchandising oficial e nos parceiros locais</li>
+            <li>Acesso a eventos exclusivos com atletas e staff técnico</li>
+            <li>Newsletter mensal com bastidores da época</li>
+          </ul>
+        </article>
+        <article class="join-card">
+          <h4>Atletas ABA</h4>
+          <ul>
+            <li>Planos de treino integrados com acompanhamento académico</li>
+            <li>Seguro desportivo e equipa médica especializada</li>
+            <li>Clínicas técnicas e camps com treinadores convidados</li>
+            <li>Experiências internacionais e participação em torneios</li>
+          </ul>
+        </article>
+        <article class="join-card">
+          <h4>Patrocinadores & Comunidade</h4>
+          <ul>
+            <li>Programas de visibilidade em jogos e eventos do clube</li>
+            <li>Ativações de marca e experiências exclusivas com a equipa</li>
+            <li>Rede de networking com parceiros e empresas da região</li>
+            <li>Reconhecimento público e kits personalizados ABA</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="adesao" class="join-section">
+      <h3 class="section-title">Como aderir</h3>
+      <div class="join-steps">
+        <div class="step">
+          <span>1</span>
+          <h4>Escolhe o teu perfil</h4>
+          <p>Define se pretendes aderir como sócio, atleta ou patrocinador.</p>
+        </div>
+        <div class="step">
+          <span>2</span>
+          <h4>Envia os teus dados</h4>
+          <p>Preenche o formulário e anexa documentos de identificação escolar/desportiva.</p>
+        </div>
+        <div class="step">
+          <span>3</span>
+          <h4>Recebe o contacto ABA</h4>
+          <p>A nossa equipa confirma a inscrição e envia os próximos passos.</p>
+        </div>
+      </div>
+
+      <div class="join-form">
+        <h4>Formulário de contacto</h4>
+        <form>
+          <div class="form-row">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="O teu nome" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+          </div>
+          <div class="form-row">
+            <label for="perfil">Perfil</label>
+            <select id="perfil" name="perfil">
+              <option value="socio">Sócio</option>
+              <option value="atleta">Atleta</option>
+              <option value="patrocinador">Patrocinador</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Fala-nos sobre ti e o que procuras"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Enviar pedido</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contactos">
+    <div class="footer-grid">
+      <div>
+        <h4>Associação Basquetebol Albicastrense</h4>
+        <p>Pavilhão ESE de Castelo Branco · 6000-216 Castelo Branco</p>
+        <p>abacbranco@gmail.com · +351 967 066 170</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">I</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Twitter">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Modalidades</h4>
+        <ul>
+          <li>Basquetebol Sénior</li>
+          <li>Formação</li>
+          <li>3x3 Street</li>
+          <li>Escola de Verão</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Clube</h4>
+        <ul>
+          <li>História</li>
+          <li>Palmarés</li>
+          <li>Missão e Valores</li>
+          <li>Direção</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <ul>
+          <li>Loja Oficial</li>
+          <li>Bilheteira</li>
+          <li>Contacto Empresas</li>
+          <li>Perguntas Frequentes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 R&R - Todos os direitos reservados</span>
+      <span>Com orgulho por Castelo Branco e pela comunidade albicastrense</span>
+    </div>
+  </footer>
+</body>
+</html>
