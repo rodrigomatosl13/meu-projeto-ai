@@ -49,6 +49,34 @@
       color: var(--primary);
     }
 
+.social-mini {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.social-mini a {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #000;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.social-mini a svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.social-mini a:hover {
+  transform: translateY(-2px);
+}
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -236,10 +264,10 @@
 
 .sub23-hero {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
-              url('assets/SUB23ABA.jpg') no-repeat;
+              url('assets/Sub23.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 83vh;
+  min-height: 100vh;
   padding: 8rem 4vw;
 }
 
@@ -999,7 +1027,7 @@
 
     .team-card img {
       width: 100%;
-      height: 200px;
+      height: 250px;
       object-fit: cover;
     }
 
