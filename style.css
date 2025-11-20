@@ -1322,6 +1322,101 @@
   color: var(--primary) !important;
   font-weight: 700;
 }
+
+.club-page {
+  background: #f5f5f5;
+}
+
+.club-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 4rem 4vw;
+  align-items: center;
+}
+
+.club-hero-photo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.club-hero-photo img {
+  width: 100%;
+  border-radius: 1.2rem;
+  height: 260px;
+  object-fit: cover;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.club-story,
+.club-legacy {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 4vw;
+}
+
+.club-story article,
+.club-legacy div {
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+.club-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 4vw;
+}
+
+  .timeline-row {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .timeline-row > .timeline-card,
+  .timeline-row > .timeline-photo {
+    flex: 1 1 48%;
+  }
+
+.timeline-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+  .timeline-row:nth-child(even) .timeline-card {
+    border-left: none;
+    border-right: 4px solid var(--primary);
+  }
+
+  .timeline-row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-photo {
+    border-radius: 1rem;
+    overflow: hidden;
+    min-height: 220px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.08);
+  }
+
+.timeline-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .mag-name {
   display: block;
   font-family: 'Montserrat', sans-serif;
