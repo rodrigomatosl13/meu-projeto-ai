@@ -545,14 +545,27 @@
     padding: 3rem 6vw;
   }
   .hero {
-    padding: 4rem 6vw 6rem;
-    min-height: 70vh;
+    padding: 3.5rem 6vw;
+    min-height: auto;
   }
   .hero-content {
-    top: -30px;
+    top: -10px;
   }
   .hero-stats {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
+  }
+  .club-hero,
+  .club-story,
+  .club-timeline,
+  .club-legacy,
+  .formation-section,
+  .calendar-section,
+  .store-layout,
+  .store-hero {
+    padding: 3rem 6vw;
+  }
+  .formation-card {
+    min-height: 420px;
   }
 }
 @media (max-width: 768px) {
@@ -573,7 +586,11 @@
   .teams,
   .join-grid,
   .join-steps,
-  .about-grid {
+  .about-grid,
+  .formation-grid,
+  .calendar-section .calendar-grid,
+  .product-grid,
+  .collection-gallery {
     grid-template-columns: 1fr;
   }
   .teams-grid {
@@ -585,9 +602,27 @@
   .join-card ul {
     margin-left: 1.25rem;
   }
+  .timeline-row {
+    flex-direction: column;
+  }
+  .timeline-row:nth-child(even) {
+    flex-direction: column;
+  }
+  .timeline-row > .timeline-card,
+  .timeline-row > .timeline-photo {
+    flex: 1 1 100%;
+  }
+  .timeline-card {
+    border-left: 4px solid var(--primary);
+    border-right: none;
+    text-align: left;
+  }
   .results-table,
   .schedule-table {
     border-radius: 0.75rem;
+  }
+  .store-layout {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 520px) {
@@ -613,6 +648,12 @@
   }
   .section-title {
     font-size: 1.6rem;
+  }
+  .club-hero-photo {
+    grid-template-columns: 1fr;
+  }
+  .formation-card .card-photo {
+    height: 160px;
   }
   .score-home,
   .score-away {
